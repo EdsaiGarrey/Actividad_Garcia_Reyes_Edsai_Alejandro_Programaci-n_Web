@@ -1,0 +1,111 @@
+/* --- Ejercicio 9: Estilos en Documento Externo --- */
+
+/* 1. Estilos por Elemento (h1, p, a, img, button) */
+h1 {
+    color: #2c3e50;
+    text-decoration: underline;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+p {
+    color: #34495e;
+    line-height: 1.6;
+}
+
+a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    border: 3px solid #bbc3c7;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #29b94b;
+    font-size: 23px;
+}
+
+/* 2. Estilos por ID (id="id1") */
+#id1 {
+    background-color: #e8f6f3;
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#id4 {
+    background-color: #8d361b;
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 3. Estilos por Clase (class="class1" y class="class2") */
+.class1 {
+    background-color: #fdf5e6;
+    border: 3px solid #d35400;
+    padding: 15px;
+    margin: 10px 0;
+    color: #d35400;
+    font-style: italic;
+}
+
+.class2 {
+    background-color: #fbe9e7;
+    border: 3px solid #c0392b;
+    padding: 15px;
+    margin: 10px 0;
+    color: #c0392b;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ====== NUEVOS ESTILOS PARA PUNTOS 5, 6 y 7 ====== */
+
+/* Punto 5: Estilo para id="p4" */
+#p4 {
+    font-size: 30px;
+    color: red;
+}
+
+/* Punto 6: Estilo para class="class3" */
+.class3 {
+    font-size: 35px;
+    font-family: Georgia, serif;
+    color: green;
+}
+
+/* Punto 7: Estilo para el div modificado con class="class2" */
+/* Usamos una clase adicional "modificado" para no romper los otros divs con class="class2" */
+.class2.modificado {
+    background-color: darkblue;
+    color: yellow;
+    font-size: 40px;
+    /* Mantenemos el padding y margen para que se vea bien */
+    padding: 15px;
+    margin: 10px 0;
+    /* Quitamos el uppercase y el borde rojo para que se vea como pide el ejercicio */
+    text-transform: none;
+    border: none;
+}

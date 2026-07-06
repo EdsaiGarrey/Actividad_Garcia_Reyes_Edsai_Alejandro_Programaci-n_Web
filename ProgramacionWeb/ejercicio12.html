@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor MXN a USD</title>
+    <link rel="stylesheet" href="CSS/ejercicio12.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Conversor de Pesos a Dólares</h1>
+        <p>Ingresa una cantidad en pesos mexicanos para convertirla a dólares estadounidenses.</p>
+
+        <form class="formulario">
+            <label for="pesos">Cantidad en pesos mexicanos:</label>
+            <input type="text" id="pesos" placeholder="Ejemplo: 500">
+
+            <button type="button" onclick="convertirDolares()">Convertir</button>
+
+            <label for="dolares">Resultado en dólares:</label>
+            <input type="text" id="dolares" readonly placeholder="Aquí aparecerá el resultado">
+
+            <p id="mensaje"></p>
+        </form>
+    </div>
+
+    <script src="JS/ejercicio12.js"></script>
+</body>
+</html>

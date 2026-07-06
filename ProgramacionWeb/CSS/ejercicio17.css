@@ -1,0 +1,178 @@
+/* Ajusta tamaños y evita desbordes */
+* {
+    box-sizing: border-box;
+}
+
+/* Evita barra horizontal */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    min-height: 100vh;
+    padding: clamp(14px, 4vw, 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal adaptable */
+.contenedor {
+    width: min(100%, 600px);
+    background-color: white;
+    padding: clamp(20px, 5vw, 32px);
+    border-radius: 12px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #1f2937;
+    font-size: clamp(28px, 7vw, 40px);
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Subtítulo */
+h2 {
+    text-align: center;
+    color: #1f2937;
+    font-size: clamp(22px, 5vw, 28px);
+    margin-top: 28px;
+}
+
+/* Texto descriptivo */
+p {
+    text-align: center;
+    color: #555555;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.4;
+}
+
+/* Formulario */
+.formulario {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Etiqueta */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #222222;
+    font-size: clamp(15px, 4vw, 17px);
+}
+
+/* Campo de texto */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+}
+
+/* Botón principal */
+button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Efecto del botón */
+button:hover {
+    background-color: #1e40af;
+}
+
+/* Lista de tareas */
+.lista {
+    width: 100%;
+}
+
+/* Quita estilos por defecto de la lista */
+#listaTareas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada tarea */
+.tarea {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    background-color: #f9fafb;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Texto de la tarea */
+.tarea span {
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    width: auto;
+    min-width: 90px;
+    margin-top: 0;
+    padding: 10px 12px;
+    background-color: #dc2626;
+}
+
+/* Efecto botón eliminar */
+.btn-eliminar:hover {
+    background-color: #991b1b;
+}
+
+/* Mensaje cuando no hay tareas */
+.vacio {
+    text-align: center;
+    color: #777777;
+    margin-top: 18px;
+    font-style: italic;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        width: 100%;
+    }
+
+    .tarea {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-eliminar {
+        width: 100%;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15 - Objetos en JavaScript</title>
+</head>
+<body>
+
+    <h1>Registro de Estudiantes</h1>
+
+    <p>Ingresa los datos de los estudiantes con el siguiente formato:</p>
+    <p><strong>Nombre,calificación</strong></p>
+    <p>Ejemplo:</p>
+    <p>Juan,85</p>
+    <p>Ana,92</p>
+    <p>Luis,78</p>
+
+    <form>
+        <label for="datos">Datos de estudiantes:</label><br>
+        <textarea id="datos" rows="6" cols="40" placeholder="Juan,85&#10;Ana,92&#10;Luis,78"></textarea>
+
+        <br><br>
+
+        <button type="button" onclick="calcularEstudiantes()">Calcular</button>
+
+        <br><br>
+
+        <label for="promedio">Promedio general:</label><br>
+        <input type="text" id="promedio" readonly>
+
+        <br><br>
+
+        <label for="mayor">Estudiante con calificación más alta:</label><br>
+        <input type="text" id="mayor" readonly>
+
+        <br><br>
+
+        <label for="menor">Estudiante con calificación más baja:</label><br>
+        <input type="text" id="menor" readonly>
+
+        <br><br>
+
+        <p id="mensaje"></p>
+    </form>
+
+    <script src="JS/ejercicio15.js"></script>
+</body>
+</html>

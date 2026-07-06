@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 – Tablas en HTML</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        tbody tr:hover {
+            background-color: #f3f3f3;
+        }
+
+        tbody tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 5 — Tablas en HTML</h1>
+    <h2>Horario semanal de clases — 2do año Base de datos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Horas</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Fila 1: 08:00 - 10:00 -->
+            <tr>
+                <td>08:00 - 10:00</td>
+                <td rowspan="2">Programación Web</td>
+                <td rowspan="2">Algoritmos</td>
+                <td rowspan="2">Bases de Datos</td>
+                <td rowspan="2">Matemática Discreta</td>
+                <td rowspan="3">Patrones de diseño</td> 
+            </tr>
+
+            <!-- Fila 2: 10:00 - 12:00 (todas las celdas de días están fusionadas) -->
+            <tr>
+                <td>10:00 - 12:00</td>
+                <!-- No hay celdas para Lunes, Martes, Miércoles, Jueves, Viernes porque ya están ocupadas por rowspan -->
+            </tr>
+
+            <!-- Fila 3: 13:00 - 15:00 -->
+            <tr>
+                <td>13:00 - 15:00</td>
+                <td rowspan="2">Sistemas Operativos</td>
+                <td rowspan="2">Programación Web</td>
+                <td rowspan="2">Matemática Discreta</td>
+                <td rowspan="2">Algoritmos</td>
+                <!-- Viernes sigue ocupado por rowspan de la primera fila, así que no se escribe nada aquí -->
+            </tr>
+
+            <!-- Fila 4: 15:00 - 17:00 -->
+            <tr>
+                <td>15:00 - 17:00</td>
+                <!-- Lunes a Jueves ya están ocupados por rowspan de la fila 3 -->
+                <td></td> <!-- Celda vacía para Viernes, porque ya no hay clase -->
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Horario vigente — 2do cuatrimestre 2024</strong></p>
+</body>
+</html>

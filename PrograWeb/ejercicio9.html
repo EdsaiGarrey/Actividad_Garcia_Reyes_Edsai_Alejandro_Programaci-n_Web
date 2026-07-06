@@ -1,0 +1,135 @@
+<!-- ejercicio 10 explica los formularios y sus atributos , elementos, input types, input atributos y form atributos y ejemplos, mediante comentarios explica cada elementos y cuando usarlo -->
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+        }
+        /* LA FORMA CORRECTA DE SEPARAR ELEMENTOS: CSS, no <br> */
+        input {
+            display: block;
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. ELEMENTOS BÁSICOS DE UN FORMULARIO -->
+    <!-- El elemento <form> es el contenedor principal. Sin esto, los datos no saben a dónde ir. -->
+    <form>
+        <!-- El <label> es crucial para accesibilidad. El atributo 'for' debe coincidir exactamente con el 'id' del input. -->
+        <label for="nombre_basico">Nombre:</label>
+        <input type="text" id="nombre_basico" name="nombre_basico">
+    </form>
+
+    <!-- 2. TIPOS DE INPUT (Input types) -->
+    <!-- Texto simple: lo básico, texto en una sola línea -->
+    <input type="text" id="tipo_texto" name="tipo_texto" placeholder="Texto libre">
+
+    <!-- Contraseña: oculta los caracteres (muestra puntos/asteriscos) -->
+    <input type="password" id="password" name="password" placeholder="Contraseña">
+
+    <!-- Email: el navegador valida automáticamente que tenga formato de correo (@ y dominio) -->
+    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+
+    <!-- Número: solo acepta dígitos. Permite usar flechas laterales para subir o bajar el valor -->
+    <input type="number" min="0" id="numero" name="numero" placeholder="Ej: 42">
+
+    <!-- Fecha: abre un widget de calendario en el navegador -->
+    <input type="date" id="fecha" name="fecha">
+
+    <!-- Hora: abre un selector de reloj -->
+    <input type="time" id="hora" name="hora">
+
+    <!-- Fecha y hora local: selector combinado de calendario y reloj -->
+    <input type="datetime-local" id="fecha_hora" name="fecha_hora">
+
+    <!-- Semana: selector específico de una semana dentro de un año -->
+    <input type="week" id="semana" name="semana">
+
+    <!-- Mes: selector de mes y año -->
+    <input type="month" id="mes" name="mes">
+
+    <!-- Rango: un slider deslizable. Ideal para volumen, intensidad, o valores donde la exactitud no importa -->
+    <input type="range" id="rango" name="rango">
+
+    <!-- Color: abre la paleta de colores del sistema operativo (devuelve un Hexadecimal) -->
+    <input type="color" id="color" name="color">
+
+    <!-- Archivo: permite abrir el explorador para subir archivos desde la PC -->
+    <input type="file" id="archivo" name="archivo">
+
+    <!-- Oculto: no se ve en pantalla. Útil para enviar datos internos que el usuario no toca (ej. IDs de base de datos) -->
+    <input type="hidden" id="oculto" name="oculto" value="id_secreto_123">
+
+    <!-- BOTONES NATIVOS -->
+    <!-- submit: al presionarlo, envía el formulario en el que está contenido -->
+    <input type="submit" id="enviar" name="enviar" value="Enviar Datos">
+    <!-- reset: limpia todos los campos del formulario y los vuelve a su estado inicial -->
+    <input type="reset" id="reset" name="reset" value="Limpiar Todo">
+    <!-- button: botón mudo. No hace nada a menos que le metas lógica con JavaScript -->
+    <input type="button" id="boton" name="boton" value="Botón Inútil">
+
+    <!-- 3. ATRIBUTOS DE INPUT (Input attributes) -->
+    <!-- required: el formulario no se envía si este campo está vacío -->
+    <input type="text" id="attr_req" name="attr_req" placeholder="Obligatorio (required)" required>
+
+    <!-- pattern: usa Expresiones Regulares (Regex) para validar. Ej: [A-Za-z]+ significa SOLO LETRAS, nada de números. -->
+    <input type="text" id="attr_pat" name="attr_pat" placeholder="Solo letras (pattern)" required pattern="[A-Za-z]+">
+
+    <!-- minlength / maxlength: limita la LONGITUD (cantidad de caracteres) que se pueden escribir -->
+    <input type="text" id="attr_len" name="attr_len" placeholder="3 a 10 chars (min/maxlength)" required minlength="3" maxlength="10">
+
+    <!-- min / max: limita el VALOR numérico permitido (diferente a length) -->
+    <input type="number" id="attr_minmax" name="attr_minmax" placeholder="Rango 0 a 10 (min/max)" required min="0" max="10">
+
+    <!-- readonly: el usuario puede leerlo y se envía en el form, pero NO PUEDE editarlo -->
+    <input type="text" id="attr_readonly" name="attr_readonly" value="Solo lectura (readonly)" required readonly>
+
+    <!-- disabled: deshabilitado por completo. Se ve gris, no se hace click, y NO se envía al backend. -->
+    <input type="text" id="attr_disabled" name="attr_disabled" value="Deshabilitado (disabled)" required disabled>
+
+    <!-- autofocus: al cargar la página, el cursor parpadea automáticamente acá. Ideal para forms de login. -->
+    <input type="text" id="attr_autofocus" name="attr_autofocus" placeholder="Foco inicial (autofocus)" required autofocus>
+
+    <!-- autocomplete: on/off para decirle al navegador si debe sugerir valores guardados previamente. -->
+    <input type="text" id="attr_auto" name="attr_auto" placeholder="Autocompletado (autocomplete)" required autocomplete="on">
+
+    <!-- multiple: permite selección múltiple. En input type file permite elegir varios archivos a la vez. -->
+    <input type="file" id="attr_mult" name="attr_mult" required multiple>
+
+    <!-- 4. ATRIBUTOS DEL FORMULARIO (Form attributes) -->
+    <!-- action: la ruta/URL a donde se enviará toda la info cuando se haga el submit. -->
+    <!-- method: POST (seguro, manda datos por debajo de la mesa en el body) o GET (inseguro, manda datos visibles en la URL). -->
+    <!-- enctype="multipart/form-data": OBLIGATORIO si tu formulario tiene subida de archivos (input type file). -->
+    <!-- novalidate: apaga todas las validaciones previas de HTML5. Útil si querés hacer tus propias validaciones puras con JavaScript. -->
+    <form action="/submit" method="post" enctype="multipart/form-data" novalidate>
+        <label for="nombre_final">Formulario Final:</label>
+        <input type="text" id="nombre_final" name="nombre_final">
+        <!-- Email: el navegador valida automáticamente que tenga formato de correo (@ y dominio) -->
+    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        <input type="submit" value="Enviar POST">
+    </form>
+</body>
+</html>

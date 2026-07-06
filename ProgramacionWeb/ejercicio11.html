@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Kilómetros a Millas</title>
+    <link rel="stylesheet" href="CSS/ejercicio11.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Conversor de Kilómetros a Millas</h1>
+        <p>Ingresa una distancia en kilómetros para convertirla a millas.</p>
+
+        <form class="formulario">
+            <label for="kilometros">Kilómetros:</label>
+            <input type="text" id="kilometros" placeholder="Ejemplo: 10">
+
+            <button type="button" onclick="convertirMillas()">Convertir</button>
+
+            <label for="millas">Resultado en millas:</label>
+            <input type="text" id="millas" readonly placeholder="Aquí aparecerá el resultado">
+
+            <p id="mensaje"></p>
+        </form>
+    </div>
+
+    <script src="JS/ejercicio11.js"></script>
+</body>
+</html>
