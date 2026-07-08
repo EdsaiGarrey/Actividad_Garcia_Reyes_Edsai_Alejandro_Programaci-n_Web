@@ -1,0 +1,129 @@
+/* Ajusta tamaños para evitar desbordamientos */
+* {
+    box-sizing: border-box;
+}
+
+/* Evita barra horizontal */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Fondo y centrado general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    min-height: 100vh;
+    padding: clamp(14px, 4vw, 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja principal responsive */
+.contenedor {
+    width: min(100%, 520px);
+    background-color: white;
+    padding: clamp(20px, 5vw, 32px);
+    border-radius: 12px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #1f2937;
+    font-size: clamp(28px, 7vw, 40px);
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Descripción */
+p {
+    text-align: center;
+    color: #555555;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.4;
+}
+
+/* Formulario */
+form {
+    width: 100%;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #222222;
+    font-size: clamp(15px, 4vw, 17px);
+}
+
+/* Campos */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+}
+
+/* Resultado */
+input[readonly] {
+    background-color: #f3f4f6;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* Contenedor de botones */
+.botones {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Botones */
+button {
+    flex: 1 1 180px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Efecto del botón */
+button:hover {
+    background-color: #1e40af;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 420px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        width: 100%;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        flex: none;
+    }
+}
